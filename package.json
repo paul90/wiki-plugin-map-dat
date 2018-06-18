@@ -1,5 +1,5 @@
 {
-  "name": "wiki-plugin-map",
+  "name": "@paul90/wiki-plugin-map",
   "version": "0.3.4",
   "description": "Federated Wiki - Map Plug-in",
   "keywords": [
@@ -30,22 +30,22 @@
   "devDependencies": {
     "expect.js": "*",
     "grunt": "^1.0.1",
-    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-coffee": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-git-authors": "~3",
     "grunt-mocha-test": "^0.13.2",
-    "mocha": "^3.1.2"
+    "mocha": "^5.2.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fedwiki/wiki-plugin-map.git"
+    "url": "https://github.com/paul90/wiki-plugin-map-dat.git"
   },
   "bugs": {
-    "url": "https://github.com/fedwiki/wiki-plugin-map/issues"
+    "url": "https://github.com/paul90/wiki-plugin-map-dat/issues"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=8.11"
   },
   "dependencies": {}
 }
