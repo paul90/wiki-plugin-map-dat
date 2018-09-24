@@ -138,7 +138,7 @@ emit = ($item, item) ->
 
     # select tiles, default to OSM
     tile = item.tile || "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    tileCredits  = item.tileCredits || '© <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    tileCredits  = item.tileCredits || '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
     L.tileLayer(tile, {
       attribution: tileCredits
