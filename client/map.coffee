@@ -124,10 +124,6 @@ emit = ($item, item) ->
     $("<link rel='stylesheet' href='#{leafletCssURL}' type='text/css'>").appendTo("head")
   if (!$("link[href='#{pluginCssURL}']").length)
     $("<link rel='stylesheet' href='#{pluginCssURL}' type='text/css'>").appendTo("head")
-  if (!$("link[href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css']").length)
-    $('<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">').appendTo("head")
-  if (!$("link[href='/plugins/map/map.css']").length)
-    $('<link rel="stylesheet" href="/plugins/map/map.css" type="text/css">').appendTo("head")
 
   wiki.getScript leafletScriptURL, ->
 
@@ -153,11 +149,14 @@ emit = ($item, item) ->
 
     # add locate control
     if tools?.locate
-      if (!$("link[href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css']").length)
-        $('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">').appendTo("head")
-      if (!$("link[href='https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.css'"))
-        $('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.css">').appendTo("head")
-      wiki.getScript "https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.js", ->
+      fontAwesomeURL = pluginOrigin + '/client/font-awesome/css/font-awesome.min.css'
+      leafletLocateControlCssURL = pluginOrigin + '/client/leaflet.locatecontrol/L.Control.Locate.min.css'
+      leafletLocateControlScriptURL = pluginOrigin + '/client/leaflet.locatecontrol/L.Control.Locate.min.js'
+      if (!$("link[href='#{fontAwesomeURL}']").length)
+        $("<link rel='stylesheet' href='#{fontAwesomeURL}'>").appendTo("head")
+      if (!$("link[href='#{leafletLocateControlCssURL}'"))
+        $("<link rel='stylesheet' href='#{leafletLocateControlCssURL}'>").appendTo("head")
+      wiki.getScript leafletLocateControlScriptURL, ->
         L.control.locate({
           position: 'topleft'
           flyTo: true
@@ -166,9 +165,11 @@ emit = ($item, item) ->
 
     # add search control
     if tools?.search
-      if (!$("link[href='https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css']").length)
-        $('<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />').appendTo("head")  
-      wiki.getScript "https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js", ->
+      leafletControlGeocoderCssURL = pluginOrigin + '/client/leaflet.controlgeocoder/Control.Geocoder.css'
+      leafletControlGeocoderScriptURL = pluginOrigin + '/client/leaflet.controlgeocoder/Control.Geocoder.js'
+      if (!$("link[href='#{leafletControlGeocoderCssURL}']").length)
+        $("<link rel='stylesheet' href='#{leafletControlGeocoderCssURL}' />").appendTo("head")  
+      wiki.getScript leafletControlGeocoderScriptURL, ->
         geocoder = L.Control.geocoder({
           defaultMarkGeocode: false
         }).on('markgeocode', (e) ->
