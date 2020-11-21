@@ -39,7 +39,7 @@
     {
       "type": "markdown",
       "id": "88fd1fd7a844bb5c",
-      "text": "Say __LOCATE__ add a geolocate tool. This will show probably location, but not add a marker to the map. "
+      "text": "Say __LOCATE__ add a geolocate tool. *Currently disabled in Beaker.* "
     },
     {
       "type": "paragraph",
@@ -591,7 +591,7 @@
       "item": {
         "type": "markdown",
         "id": "88fd1fd7a844bb5c",
-        "text": "Say __LOCATE__ add a geolocate tool. This will show probably location, but not add a marker to the map."
+        "text": "Say __LOCATE__ add a geolocate tool. *Currently disabled in Beaker.* "
       },
       "after": "3a5368621911edac",
       "date": 1600166255226
